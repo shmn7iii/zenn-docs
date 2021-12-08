@@ -1,3 +1,5 @@
-# Zenn CLI
+# zenn-docs
 
-* [📘 How to use](https://zenn.dev/zenn/articles/zenn-cli-guide)
+Documents for Zenn articles.
+
+Zenn 👉 [zenn.dev/shmn7iii](https://zenn.dev/shmn7iii)
