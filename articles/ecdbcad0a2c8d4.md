@@ -8,13 +8,13 @@ published: true
 
 # はじめての Tapyrus
 
-初めて Tapryus を学ぶ方へ向けた、「Tapyrus とはなんたるか」「Tapyrus は何がいいのか」を解説する記事になります。記事中ではブロックチェーン、特に Bitcoin の知識を前提としています。基礎的な内容については触れておりませんのでご注意ください。
+はじめて Tapryus を学ぶ方へ向けた、「Tapyrus とはなんたるか」「Tapyrus は何がいいのか」を理解する記事です。記事中ではブロックチェーン、とくに Bitcoin の知識を前提としています。基礎的な内容については触れておりませんのでご注意ください。
 
-記事の内容は [tapyrus-core/doc/tapyrus/](https://github.com/chaintope/tapyrus-core/tree/master/doc/tapyrus) 配下のドキュメント、特に [getting_started.md](https://github.com/chaintope/tapyrus-core/blob/master/doc/tapyrus/getting_started.md) と [technical_overview.md](https://github.com/chaintope/tapyrus-core/blob/master/doc/tapyrus/Tapyrus_Technical_Overview_ja.pdf) を参考にしております。より正確かつ最新の情報は[公式ソース](https://www.chaintope.com/chaintope-blockchain-protocol/)を参照してください。
+記事の内容は [tapyrus-core/doc/tapyrus/](https://github.com/chaintope/tapyrus-core/tree/master/doc/tapyrus) 配下のドキュメント、とくに [getting_started.md](https://github.com/chaintope/tapyrus-core/blob/master/doc/tapyrus/getting_started.md) と [technical_overview.md](https://github.com/chaintope/tapyrus-core/blob/master/doc/tapyrus/Tapyrus_Technical_Overview_ja.pdf) を参考にしています。より正確かつ最新の情報は[公式ソース](https://www.chaintope.com/chaintope-blockchain-protocol/)を参照してください。
 
 # Tapyrus とは
 
-任意のビジネスケース毎に独立したネットワークを構成・運用することができるブロックチェーン。各ネットワークは管理主体となるフェデレーション（連邦）をもち、ジェネシスブロック・集約公開鍵・ネットワーク ID で識別される。また、一つのネットワークは「**Signer Network**」と「**Tapyrus Network**」の二つの層で構成される。
+任意のビジネスケース毎に独立したネットワークを構成・運用することができるブロックチェーン。各ネットワークは管理主体となるフェデレーション（連邦）をもち、ジェネシスブロック・集約公開鍵・ネットワーク ID で識別される。また、1 つのネットワークは「**Signer Network**」と「**Tapyrus Network**」の 2 つの層で構成される。
 
 ## ブロックチェーンの分類
 
@@ -37,11 +37,11 @@ chaintope のサイトおよびレポジトリではしばしば「ハイブリ�
 
 ### コンセンサスアルゴリズム
 
-Bitcoin における PoW では後述の問題があるとし、Tapyrus では PoA に近い、フェデレーションによる検証可能な閾値署名方式を用いたコンセンサスをとっている。公式では明確に「PoA」と行った表現はしていない。
+Bitcoin における PoW では後述の問題があるとし、Tapyrus では PoA に近い、フェデレーションによる検証可能な閾値署名方式を用いたコンセンサスをとっている。公式では明確に「PoA」と表現はしていない。
 
 # 既存チェーンの課題
 
-Tapyrus の特徴を説明するために既存チェーンにおける課題点をおさらいする。
+Tapyrus の特徴を説明するために、既存チェーンにおける課題点をおさらいする。
 
 ## ファイナリティの欠如
 
@@ -49,30 +49,30 @@ Tapyrus の特徴を説明するために既存チェーンにおける課題点
 
 > “**ファイナリティ**（settlement finality）”とは、一般に「決済が無条件かつ取消不能となり、最終的に完了した状態」と定義され、我が国においては「決済完了性」と呼ばれる。 - **[金融庁](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjIiom1h4v3AhU7w4sBHZHPA_cQFnoECAsQAw&url=https%3A%2F%2Fwww.fsa.go.jp%2Ffrtc%2Fnenpou%2F2006a%2F11.pdf&usg=AOvVaw3onP5VNoY_VjLtFAIFjG7D)**
 
-しかし、ブロックチェーンにおいては、チェーンの「不可逆性」としてファイナリティという言葉が使われる。これら二つの概念は全くもって別のものであるという認識が重要である。
-従来の Bitcoin などによる PoW ではファイナリティは存在せず、ブロックが徐々に繋がることにより再編成やチェーン分岐の可能性が小さくなり、確率的にファイナリティがもたらされる仕組みになっている。つまり既存チェーンにおいては分岐可能性は常に存在し、絶対的なファイナリティがもたらされることはなく、時間経過により確率的に分岐可能性が収束することによる「疑似的なファイナリティ」がもたらされるにすぎない。
+しかし、ブロックチェーンにおいては、チェーンの「不可逆性」としてファイナリティという言葉が使われる。これら 2 つの概念はまったくもって別のものであるという認識が重要である。
+従来の Bitcoin などによる PoW ではファイナリティは存在せず、ブロックが徐々に繋がることにより再編成やチェーン分岐の可能性が小さくなり、確率的にファイナリティがもたらされる仕組みになっている。つまり既存チェーンにおいて分岐可能性は常に存在し、絶対的なファイナリティがもたらされることはなく、時間経過により確率的に分岐可能性が収束することによる「疑似的なファイナリティ」がもたらされるにすぎない。
 このような「確率的ファイナリティ」においては以下の課題が挙げられる。
 
 **決済速度の低下**
 前述の通り、時間経過による確率の収束を待たなければ決済が成立したと見なすことができず、即時決済などに向かない。
 
 **トランザクションの不確定性**
-ブロックの再編成・チェーンの分岐が発生した場合、破棄されたブロック内に含まれるトランザクションは無効となり、決済は失敗に終わる。これは「時間経過により決済成功とみなした後」にも起こり得る事象であり、ファイナリティ欠如の最たるデメリットとも言える。
+ブロックの再編成・チェーンの分岐が発生した場合、破棄されたブロック内に含まれるトランザクションは無効となり、決済は失敗に終わる。これは「時間経過により決済成功とみなした後」にも起こり得る事象であり、ファイナリティが欠如することの最たるデメリットとも言える。
 
 ## ボラリティの低さ
 
 ボラリティとは「価値変動の度合い」を示す経済学用語である。ここでは各チェーンにおけるネイティブトークン（BTC や ETH など）のマーケット価格の揺れを指す。
 多くのブロックチェーンでは大量のトランザクション処理要求などによる Dos 攻撃を防ぐため、トランザクションの実行に手数料を課している。この手数料は各チェーンのネイティブトークンで支払われることになるが、現在それらのマーケット価格の変動は非常に激しいものになっている。
-例えばエンタープライズ向けなどにサービスを構築する際、手数料価格を含む実コストの予想が非常に困難となり、サービスの運用に支障をきたす可能性がある。また、外的要因によりネットワークを流れるトランザクション数が増加し、手数料が高騰（[Ethereum におけるガス代高騰問題](https://www.coindeskjapan.com/137693/)など）することも珍しくない。
+このボラリティの低さゆえに、たとえばエンタープライズ向けサービスを構築する際、手数料価格を含む実コストの予想が非常に困難となり、サービスの運用に支障をきたす可能性がある。また、ネットワークを流れるトランザクション数が増加し、手数料が高騰（[Ethereum におけるガス代高騰問題](https://www.coindeskjapan.com/137693/)など）することも珍しくない。
 
 ## チェーンのガバナンス
 
-パブリックチェーンにおいて、ガバナンス主体としての管理者は存在しない。これはブロックチェーンにおける大きなメリットでもあるが、同時にデメリットにもなりうる。例えばコンセンサスに影響をもたらすような大きな機能拡張、または致命的な欠陥の修正において、コミュニティ内でうまく意見が合わず、結果ハードフォークなどの結果に繋がる例も過去には発生している。2017 年には Bitcoin において、BIP49（SegWit）の導入に一部マイナーが反対し、実際に「Bitcoin Cash」としてハードフォークした事例がある。また、Ethereum における The DAO 事件では Ethereum コミュニティにより救済的なハードフォークが行われたが、これは当該事件に対する「特別な処置」でもあり、いわば「コミュニティからの神の手」である対に反対する一部派閥により、新たな分岐チェーン「Ethereum Classic」が誕生した。
+パブリックチェーンにおいて、ガバナンス主体としての管理者は存在しない。これはブロックチェーンにおける大きなメリットでもあるが、同時にデメリットにもなりうる。たとえばコンセンサスに影響をもたらすような大きな機能拡張、または致命的な欠陥の修正において、コミュニティ内でうまく意見が合わず、結果ハードフォークなどの結果に繋がる例も過去には発生している。2017 年には Bitcoin において、BIP49（SegWit）の導入に一部マイナーが反対し、実際に「Bitcoin Cash」としてハードフォークした事例がある。また、Ethereum における The DAO 事件では Ethereum コミュニティにより救済的なハードフォークが行われたが、これは当該事件に対する「特別な処置」でもあり、いわば「コミュニティからの神の手」である本対応には様々な議論が巻き起こった。その結果、反対する一部派閥により新たな分岐チェーン「Ethereum Classic」が誕生した。
 このように明確な管理者が存在しないチェーンにおいて、その不在がしばしば問題となっている。
 
 ## 参照権限の有無
 
-上記のような問題を解決するため、許可型ブロックチェーン「Hyperledger Fabric」が登場した。Hyperledger Fabric は参加者を限定した許可型のブロックチェーンであり、コンセンサスアルゴリズムには PBFT が採用され、許可を得た参加者であるかを API 層で任意に実装するなどで、トランザクション手数料の撤廃に成功している。またチェーン参加が許可型であることから許可主体によるガバナンスが取られ、上記のような課題は解決されている。
+上記のような問題を解決するため、許可型ブロックチェーン「Hyperledger Fabric」が登場した。Hyperledger Fabric は参加者を限定した許可型のブロックチェーンであり、コンセンサスアルゴリズムには PBFT が採用され、様々な工夫のもとトランザクション手数料の撤廃に成功している。また、チェーン参加が許可型であることから許可主体によるガバナンスが取られ、上記のような課題は解決されている。
 しかし、チェーン参加が許可型であると同時に、チェーン上のデータの参照権限も許可されたノードに限られる。つまり、オープンな台帳アクセスが提供されておらず、第三者による「データの正しさ」の証明が不可能である。
 
 # Tapyrus による解決「ブロックチェーン層の二層分割」
@@ -109,7 +109,7 @@ Tapyrus の技術的な仕様を紹介する。
 | Tapyrus Core   | 最低 1, 上限なし | Tapyrus Network を構築      |
 | Tapyrus Seeder | 最低 1, 上限なし | ネットワークの DNS シーダー |
 
-また、ネットワークは以下のパラメータを持つ。
+また、ネットワークは以下のパラメーターを持つ。
 
 **Network ID**
 ネットワーク ID。ネットワークを識別するものであり、独自である必要がある。
@@ -130,8 +130,8 @@ Signer Network は構築時に設定されたフェデレーションのメン�
 ノードの役割は主に
 
 - Tapyrus Network で生成されたトランザクションを収集し検証する
-- 有効なトランザクションからブロックを生成作成し署名する
-- Tapyrus Nerwork へブロードキャストする
+- 有効なトランザクションからブロックを作成し署名する
+- Tapyrus Network へブロードキャストする
 
 ことである。
 
@@ -143,13 +143,13 @@ Signer Network の作成したブロックの検証は、ブロックの proof �
 - 署名対象のメッセージ `m`（ブロックヘッダーから proof を除外したデータの double-SHA256 ハッシュ値）
 - 集約公開鍵（全 Signer の公開鍵を加算し、集約したもの）
 
-上二つは検証対象のブロックから取得でき、また集約公開鍵は公開鍵の集約にすぎないため、Tapyrus Network の参加者全てがこれらについて参照可能である。つまり、誰でもブロックの正しさを独立して検証することができる。
+上 2 つは検証対象のブロックから取得でき、また集約公開鍵は公開鍵の集約にすぎないため、Tapyrus Network の参加者すべてがこれらについて参照可能である。つまり、誰でもブロックの正しさを独立して検証することができる。
 
 ### 閾値署名方式
 
-先述の集約公開鍵に対応するものとして集約秘密鍵がある。しかし、集約秘密鍵の生成には全ての Signer の秘密鍵を知る必要があり、これはセキュリティ上望ましい手法とは言えない。そこで Tapyrus では分散 Schnorr 署名と(t, n)閾値署名方式を基に、「集約秘密鍵を生成することなく集約公開鍵に対して有効な Schnorr 署名を作成する」方式をとっている。この方式では内部で「検証可能な秘密分散（Verifiable Secret Sharing: VSS）」を使用し、秘密分散法と Schnorr 署名を組み合わせ、n 人の Signer 中、閾値 t 個の部分署名を集めると有効な Schnorr 署名を完成させることができる閾値署名を提供する。これにより、全ての Signer の署名を収集する必要はなく、t 個集めれば良いため、部分的な Signer の故障に対しても堅牢である。（ただし閾値を満たす必要はある）
+先述の集約公開鍵に対応するものとして集約秘密鍵がある。しかし、集約秘密鍵の生成にはすべての Signer の秘密鍵を知る必要があり、これはセキュリティ上望ましい手法とは言えない。そこで Tapyrus では分散 Schnorr 署名と(t, n)閾値署名方式を基に、「集約秘密鍵を生成することなく集約公開鍵に対して有効な Schnorr 署名を作成する」方式をとっている。この方式では内部で「検証可能な秘密分散（Verifiable Secret Sharing: VSS）」を使用し、秘密分散法と Schnorr 署名を組み合わせ、n 人の Signer 中、閾値 t 個の部分署名を集めると有効な Schnorr 署名を完成させることができる閾値署名を提供する。これにより、すべての Signer の署名を収集する必要はなく、t 個集めれば良いため、部分的な Signer の故障に対しても堅牢である。（ただし、正常なノード数が閾値 t を満たす必要はある）
 
-また、閾値 t は任意に設定することができるが、分母に対し過半数を超える値、もしくはビザンチン耐性を考慮した値が望ましい。
+また、閾値 t は任意に設定することができるが、分母に対し半数を超える値、もしくはビザンチン耐性を考慮した値が望ましい。
 これにより生成される Schnorr 署名は、ネットワーク参加者から見ると単一の Schnorr 署名であるため、署名検証コストは一定となる。
 
 **秘密分散**
@@ -164,7 +164,7 @@ Schnorr 署名は、1990 年にシュノアが提唱した離散対数問題の�
 ### Signer Network の処理フロー
 
 各 Signer ノードはそれぞれの公開鍵で識別され、辞書順にインデックスが割り当てられる。
-また、Signer がメッセージを交換し、一つのブロックを作成するまでの期間を「ラウンド」と呼び、各ラウンド毎にラウンドマスターが選出される。このラウンドマスターは Signer ノードのインデックスを基に決定される。
+また、Signer がメッセージを交換し、1 つのブロックを作成するまでの期間を「ラウンド」と呼び、各ラウンド毎にラウンドマスターが選出される。このラウンドマスターは Signer ノードのインデックスをもとに決定される。
 各ラウンドの流れを以下に示す。（ラウンドマスターは「全 Signer」に含まれる）
 
 1. ラウンドマスターが選出される
@@ -183,15 +183,15 @@ Tapyrus Network は誰もが参加可能なブロックチェーンネットワ�
 
 ノードの役割は主に
 
-- 全てのオンチェーンデータの提供
+- すべてのオンチェーンデータの提供
 - トランザクションの発行、伝搬
 
 Tapyrus のフルノード実装である Tapyrus Core は、Bitcoin Core をベースに作られている。
 
 ## トークン
 
-多くのトークンプロトコルは、オーバーレイプロトコルである Layer2 で実装されている。しかし、これら実装は「任意データをブロックチェーンに記録する機能」を用いており、これは Layer1 におけるコンセンサスとして正しさを検証されない。
-例えば Bitcoin におけるトークン「カラードコイン」を表現するプロトコルは複数存在し、Open Assets Protocol が主流である。しかし、Open Assets Protocol を通じて発行されたカラードコインは Bitcoin 単体ではカラードコインとして解釈することはできず、あくまで Open Assets Protocol を通して見た時に初めてカラードコインであると認識できる。これはウォレットの実装においても、仮に Open Assets Protocol を解釈しないウォレットにカラードコインが送られた場合、ウォレットは受信トークンをトークンと認識できず、ネイティブトークンである BTC として解釈する。またこの説明において、 “Bitcoin” がすなわち “Layer1” であり、”Open Assets Protocol” が “Layer2 プロトコル” である。
+多くのトークンプロトコルは、オーバーレイプロトコルである Layer2 で実装されている。しかし、これら実装は Layer1 において必ずしも正しく解釈されるとは限らない。
+たとえば Bitcoin におけるトークン「カラードコイン」を表現するプロトコルは複数存在し、Open Assets Protocol が主流である。しかし、Open Assets Protocol を通じて発行されたカラードコインは Bitcoin 単体ではカラードコインとして解釈することはできず、あくまで Open Assets Protocol を通して見た時にはじめてカラードコインであると認識できる。これはウォレットの実装においても、仮に Open Assets Protocol を解釈しないウォレットにカラードコインが送られた場合、ウォレットは受信トークンをトークンと認識できず、ネイティブトークンである BTC として解釈する。
 対して Tapyrus では Layer1 において、つまり外部のライブラリやプロトコル等に依存せず Tapyrus 単体での任意のトークンの発行・転送をサポートしている。
 
 ### トークン仕様
@@ -202,10 +202,10 @@ Tapyrus では以下の 3 種類のトークンタイプが発行可能である
 - Non-Reissuable Token（再発行不可能なファンジブルトークン）（一部ドキュメントで Unreissuable Token と表記される場合もある）
 - Non-Fungible Token（NFT）
 
-上二つについては Fungible Token であり、複数枚の発行が可能である。
-NFT については、ERC721 のような「コントラクトを基にトークンを発行し、Metadata を付与する」といった考え方ではなく、特定のアドレスに対し一意な ID を持ったトークンが発行されるものである。
-トークンを識別するために、Tapyrus Script にて OP_COLOR opcode が追加されている。OP_COLOR は Script 内に一つのみ含めることができ、OP_COLOR が出現するとスタックの一番上の要素が “COLOR 識別子” として解釈され、その UTXO のコインは任意のトークンを示す。OP_COLOR のない Script はネイティブトークンとして解釈される。
-つまり単に「OP_COLOR の有無」のみでネイティブトークンか否かを判断することができ、また後述の「COLOR 識別子」によりトークンの識別が可能であるため、ノード/ウォレットは UTXO 単体でトークンを解釈することが可能である。それにより、経由した使用済み TXO の全てを保持する必要がなくなり、軽量ノードなどにおいても容易にトークンを扱うことが可能である。
+上 3 つについては Fungible Token であり、複数枚の発行が可能である。
+NFT については、ERC721 のような「コントラクトをもとにトークンを発行し、Metadata を付与する」といった考え方ではなく、特定のアドレスに対し一意な ID を持ったトークンが発行されるものである。
+トークンを識別するために、Tapyrus Script にて OP_COLOR opcode が追加されている。OP_COLOR は Script 内に 1 つのみ含めることができ、OP_COLOR が出現するとスタックの最上位要素が “COLOR 識別子” として解釈され、その UTXO のコインは任意のトークンを示す。OP_COLOR のない Script はネイティブトークンとして解釈される。
+つまり単に「OP_COLOR の有無」のみでネイティブトークンか否かを判断することができ、また後述の「COLOR 識別子」によりトークンの識別が可能であるため、ノード/ウォレットは UTXO 単体でトークンを解釈することが可能である。それにより、軽量ノードなどにおいても容易にトークンを扱うことが可能である。
 
 **COLOR 識別子**
 CCOLOR 識別子は 1 バイトの「タイプ（TYPE）」と 32 バイトの「ペイロード（PAYLOAD）」で構成される。COLOR 識別子の内容は以下表に示す通り。
@@ -217,9 +217,9 @@ CCOLOR 識別子は 1 バイトの「タイプ（TYPE）」と 32 バイトの�
 | 0xC3   | Non-Fungible Token   | 発行 TX のインプットの OutPoint の SHA256 値     |
 
 「発行 TX のインプットの OutPoint」
-OutPoint とは特定の TXO を指定するために利用されるデータ構造であり、TXID とインデックス番号から成る。つまり NRT, NFT におけるペイロードは発行時に利用した「TXID とインデックス番号」すなわち UTXO を基に造られることになり、UTXO はチェーンで一意であるため COLOR 識別子にも一意性がもたらされる。
+OutPoint とは UTXO を指定するために利用されるデータ構造であり、TXID とインデックス番号からなる。つまり NRT, NFT におけるペイロードは「発行時に利用した TXID とインデックス番号」すなわち任意の UTXO をもとに造られ、UTXO はチェーンで一意であるため COLOR 識別子にも一意性がもたらされる。
 
-また、COLOR 識別子は、[tapyrus-cli にて token を発行](https://zenn.dev/shmn7iii/articles/65318fa90432f0#issue)した際には `color`、Tapyrus の Ruby 実装である[tapyrusrb においては](https://github.com/chaintope/tapyrusrb/blob/c1d1d538f8fa3d9066dd081df881ab70eefed401/lib/tapyrus/tx_builder.rb#L71) `color_id` と表記される。
+また、COLOR 識別子は、[tapyrus-cli にてトークンを発行](https://zenn.dev/shmn7iii/articles/65318fa90432f0#issue)した際には `color`、Tapyrus の Ruby 実装である[tapyrusrb においては](https://github.com/chaintope/tapyrusrb/blob/c1d1d538f8fa3d9066dd081df881ab70eefed401/lib/tapyrus/tx_builder.rb#L71) `color_id` と表記される。
 
 以降では tapyrus-cli を用いた testnet での NFT 操作を交えて進める。
 
@@ -230,7 +230,7 @@ OutPoint とは特定の TXO を指定するために利用されるデータ構
 | アウトプット | COLOR 識別子と OP_COLOR を使った scriptPubkey を含む UTXO（トークン本体） |
 |              | お釣り UTXO                                                               |
 
-トークン新規発行のトランザクションは、UTXO をインプットにセットし COLOR 識別子を導出、COLOR 識別子と OP_COLOR を使った scriptPubkey をアウトプットにセットすることで作成される。またトークンの発行量はアウトプットにおいて value としてセットすることが可能であり、インプットに指定された UTXO で発生するお釣りは非トークンアウトプットが作成され、従来通り TPC で返却される。
+トークン新規発行のトランザクションは、UTXO をインプットにセットし COLOR 識別子を導出、COLOR 識別子と OP_COLOR を使った scriptPubkey をアウトプットにセットすることで作成される。またトークンの発行量はアウトプットにおいて value としてセットすることが可能であり、インプットに指定された UTXO で発生するお釣りは非トークンアウトプット(ネイティブトークンアウトプット)が作成され、従来通り TPC で返却される。
 
 ```bash
 # 手持ち
@@ -252,13 +252,15 @@ $ tapyrus-cli listunspent
 ]
 
 # 発行
-$ tapyrus-cli -conf=/etc/tapyrus/tapyrus.conf issuetoken 3 1 3bc7c60867a3fe2e4c0b1be12cf930ee31f20e96c46028aa08071889e1f83c57 0
+# issuetoken <Token Type> <量> <UTXOのTXID> <UTXOのIndex>
+$ tapyrus-cli issuetoken 3 1 3bc7c60867a3fe2e4c0b1be12cf930ee31f20e96c46028aa08071889e1f83c57 0
 {
   "color": "c397cad1a9664d9b99696f4c83badf8b3e0cdf54803a17066519aa859cdedd2a22",
   "txid": "153dfc29ce70d7c249fc382055a44deefa72a4c48ee20ec1e3fa8e0c3f9f3120"
 }
 
 # txの内容
+$ tapyrus-cli getrawtransaction 153dfc29ce70d7c249fc382055a44deefa72a4c48ee20ec1e3fa8e0c3f9f3120 true
 {
   "txid": "153dfc29ce70d7c249fc382055a44deefa72a4c48ee20ec1e3fa8e0c3f9f3120",
   "hash": "36a0e2a144bca76365bc7717e32002a5f9c767ae9d084527e38c8b9d7a234e4e",
@@ -305,11 +307,16 @@ $ tapyrus-cli -conf=/etc/tapyrus/tapyrus.conf issuetoken 3 1 3bc7c60867a3fe2e4c0
         ]
       }
     }
-  ]
+  ],
+  "hex": "0100000001573cf8e189180708aa2860c4960ef231ee30f92ce11b0b4c2efea36708c6c73b000000006946304302206efe41c9968bf7edeac3c5c636806b82198626358cece9f4998841e693fcca49021f0096c08d46dcda64a2390fc6d95de0d6a3aa67225ded1744fbc3f856938bb1012103f960211ba2f99001cfe168b2190c9eadc93f1e9504c629800228d38ce1b3cf78feffffff0201000000000000003a21c397cad1a9664d9b99696f4c83badf8b3e0cdf54803a17066519aa859cdedd2a22bca91429dc588b58a35145d7281c6ccdcf1d38794fcaf787fedff505000000001976a91462cfafe2c7062cb73929b0fb0b8ce44259dbfa0488ac8edd0200",
+  "blockhash": "4e99c5173f96f9427b35d8c9ba2cda2ba1bdd3659e035c4c142e55c2d3d70fd5",
+  "confirmations": 14811,
+  "time": 1649759394,
+  "blocktime": 1649759394
 }
 ```
 
-vout[0] の scriptPubkey asm において OP_COLOR opcode が Script 内に出現したことにより最上位要素が COLOR 識別子として解釈されている。
+vout[0] の scriptPubkey asm において OP_COLOR opcode が Script 内に出現したことにより、このスクリプトの最上位要素が COLOR 識別子として解釈されている。
 
 ```bash
 c397cad1a9664d9b99696f4c83badf8b3e0cdf54803a17066519aa859cdedd2a22 OP_COLOR ...
@@ -329,7 +336,7 @@ c397cad1a9664d9b99696f4c83badf8b3e0cdf54803a17066519aa859cdedd2a22 OP_COLOR ...
 
 ```bash
 # 手持ち
-user@nodeA:$ tapyrus-cli -conf=/etc/tapyrus/tapyrus.conf listunspent
+user@nodeA:$ tapyrus-cli listunspent
 [
   {
     "txid": "153dfc29ce70d7c249fc382055a44deefa72a4c48ee20ec1e3fa8e0c3f9f3120",
@@ -358,14 +365,14 @@ user@nodeA:$ tapyrus-cli -conf=/etc/tapyrus/tapyrus.conf listunspent
 ]
 
 # 受け取り先アドレスを生成
-# getnewaddressコマンドの第三引数に受け取るTokenのCOLOR識別子を指定する必要がある
-# 第二引数はlabel。任意。
-user@nodeB:$ tapyrus-cli -conf=/etc/tapyrus/tapyrus.conf getnewaddress "" c397cad1a9664d9b99696f4c83badf8b3e0cdf54803a17066519aa859cdedd2a22
+# getnewaddress コマンドの第三引数に受け取る Token の COLOR 識別子を指定する必要がある
+# 第二引数には label を指定する必要があるが、特段意図がなければ空文字列で良い
+user@nodeB:$ tapyrus-cli getnewaddress "" c397cad1a9664d9b99696f4c83badf8b3e0cdf54803a17066519aa859cdedd2a22
 vypPXVBfqAuVqVt6unNWvoMXdUpb6BsWqK1aL62GkAjtGxP3AY5QRGaXr5b7ZkNy2Z2zvFS9qcCRth
 
 # アドレスを確認
-# tokenが指定したCOLOR識別子となっていることがわかる。
-user@nodeA:$ tapyrus-cli -conf=/etc/tapyrus/tapyrus.conf getaddressinfo vypPXVBfqAuVqVt6unNWvoMXdUpb6BsWqK1aL62GkAjtGxP3AY5QRGaXr5b7ZkNy2Z2zvFS9qcCRth
+# "token" 要素が指定した COLOR 識別子となっていることがわかる
+user@nodeA:$ tapyrus-cli getaddressinfo vypPXVBfqAuVqVt6unNWvoMXdUpb6BsWqK1aL62GkAjtGxP3AY5QRGaXr5b7ZkNy2Z2zvFS9qcCRth
 {
   "address": "vypPXVBfqAuVqVt6unNWvoMXdUpb6BsWqK1aL62GkAjtGxP3AY5QRGaXr5b7ZkNy2Z2zvFS9qcCRth",
   "token": "c397cad1a9664d9b99696f4c83badf8b3e0cdf54803a17066519aa859cdedd2a22",
@@ -381,10 +388,13 @@ user@nodeA:$ tapyrus-cli -conf=/etc/tapyrus/tapyrus.conf getaddressinfo vypPXVBf
 }
 
 # 転送
-user@nodeA:$ tapyrus-cli -conf=/etc/tapyrus/tapyrus.conf transfertoken vypPXVBfqAuVqVt6unNWvoMXdUpb6BsWqK1aL62GkAjtGxP3AY5QRGaXr5b7ZkNy2Z2zvFS9qcCRth 1
+# transfertoken <送信先アドレス> <量>
+# どのトークンを転送するか、の情報は送信先アドレスが保持しているので指定は不要
+user@nodeA:$ tapyrus-cli transfertoken vypPXVBfqAuVqVt6unNWvoMXdUpb6BsWqK1aL62GkAjtGxP3AY5QRGaXr5b7ZkNy2Z2zvFS9qcCRth 1
 3b49b5afb9027dd910007424d59c6cd1ce457ab08edb3b521c75163e6eaef500
 
 # txの内容
+$ tapyrus-cli getrawtransaction 3b49b5afb9027dd910007424d59c6cd1ce457ab08edb3b521c75163e6eaef500 true
 {
   "txid": "3b49b5afb9027dd910007424d59c6cd1ce457ab08edb3b521c75163e6eaef500",
   "hash": "2d6159b377ff26a9b7e711be17ead9ef87228eeb6da0ce870c0b69516a49a64c",
@@ -440,7 +450,12 @@ user@nodeA:$ tapyrus-cli -conf=/etc/tapyrus/tapyrus.conf transfertoken vypPXVBfq
         ]
       }
     }
-  ]
+  ],
+  "hex": "010000000220319f3f0c8efae3c10ee28ec4a472faee4da4552038fc49c2d770ce29fc3d15010000006a47304402200dc914aef786e52d69782ae910e7d2100df89d3bd79dd3d306820d64870b53c5022011e9152407d84df08170521c87cd3d14140ff975e4d161e63b6276ffffba720e012102ccdaebb6da9df094d158b279e419fa1c485021ef2cf17fbc3959455c645ad03cfeffffff20319f3f0c8efae3c10ee28ec4a472faee4da4552038fc49c2d770ce29fc3d15000000001a1976a914c560ac838ad1434d6178dd5da43ddf1afe698f6588acfeffffff0201000000000000003c21c397cad1a9664d9b99696f4c83badf8b3e0cdf54803a17066519aa859cdedd2a22bc76a914156279703d67559ecf434c10443c6b2551a94a4588acb7def505000000001976a9140b7b790f099e87ea17828b64fc433134ffaa253d88ac93dd0200",
+  "blockhash": "bbbd95cf099abe550f22a30ff212443a82eb37b71dfca6d34d1d2114147aab6d",
+  "confirmations": 14807,
+  "time": 1649760872,
+  "blocktime": 1649760872
 }
 ```
 
@@ -485,10 +500,12 @@ $ tapyrus-cli listunspent
 	...
 
 # burn
+# burntoken <COLOR識別子> <量>
 $ tapyrus-cli c37a34d9f3602badf8110d65ee06cc7647539e885c29a981d02b6ee36daf84e4ec 1
 6eb2dd62fb164590b3377d34111785e9ecfe4342b8417b41c0eeb94235e29170
 
 # txの内容
+$ tapyrus-cli getrawtransaction 6eb2dd62fb164590b3377d34111785e9ecfe4342b8417b41c0eeb94235e29170 true
 {
   "txid": "6eb2dd62fb164590b3377d34111785e9ecfe4342b8417b41c0eeb94235e29170",
   "hash": "471018aa8ed5402d1a6ba70a2cc5d8b0d3b46e0bfd3fe353819c4ecbb870457d",
@@ -530,11 +547,16 @@ $ tapyrus-cli c37a34d9f3602badf8110d65ee06cc7647539e885c29a981d02b6ee36daf84e4ec
         ]
       }
     }
-  ]
+  ],
+  "hex": "0100000002a5c0bb1387ee17ffc8195a26efbf0eb70677c7ae8f9269ecb8623e72bcd01af9010000006a473044022056ddf6cd953602d9bac639902770c8803c86f6e4258d64afd090ff7a3ed5b2d802200d77b96e93c65d2b83e67eb53721d838a5f18634869fd14a22786dc1539c5649012102c85ca219273c2e122519f6b7f97bd08e392bceae338e9d76ed59718d54038ea3feffffff821a24856730cd876290ba62be430d102436dc714fa8cb4b832293d2f8c6d3c5000000006a47304402205872ebe121b23831721220d81556d9e6e43611710f6ec7e98edd9ef8aae17c720220345b7defb538fbff85a3f53c96938c024c3164590e4768def8f65e25c275f642012103b6f816de05e8748387ef07d6398c6ede9b2198c924af50f74194b9b7fc6287dafeffffff01bdf17800000000001976a914da51263c611741c7085ea56a648e21e924d6268d88ace4de0200",
+  "blockhash": "fe45ef9cb910b5432757a6713c14648859f2f58b133cc6838247ed2e0b4ff01d",
+  "confirmations": 14469,
+  "time": 1649860433,
+  "blocktime": 1649860433
 }
 ```
 
-これら 3 つの処理について、一つのトランザクションにまとめることが可能である。有効な組み合わせについては以下の資料を参照。
+これら 3 つの処理について、1 つのトランザクションにまとめることが可能である。有効な組み合わせについては以下の資料を参照。
 
 [https://docs.google.com/spreadsheets/d/1hYEe5YVz5NiMzBD2cTYLWdOEPVUkTmVIRp8ytypdr2g/edit#gid=0](https://docs.google.com/spreadsheets/d/1hYEe5YVz5NiMzBD2cTYLWdOEPVUkTmVIRp8ytypdr2g/edit#gid=0)
 
