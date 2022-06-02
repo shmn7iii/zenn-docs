@@ -199,6 +199,10 @@ Tapyrus のフルノード実装である Tapyrus Core は、Bitcoin Core をベ
 たとえば Bitcoin におけるトークン「カラードコイン」を表現するプロトコルは複数存在し、Open Assets Protocol が主流である。しかし、Open Assets Protocol を通じて発行されたカラードコインは Bitcoin 単体ではカラードコインとして解釈することはできず、あくまで Open Assets Protocol を通して見た時にはじめてカラードコインであると認識できる。これはウォレットの実装においても、仮に Open Assets Protocol を解釈しないウォレットにカラードコインが送られた場合、ウォレットは受信トークンをトークンと認識できず、ネイティブトークンである BTC として解釈する。
 対して Tapyrus では Layer1 において、つまり外部のライブラリやプロトコル等に依存せず Tapyrus 単体での任意のトークンの発行・転送をサポートしている。
 
+**参考: Bitcoin への新しい Colored Coin プロトコルの提案**
+過去、 Bitcoin へ「ネイティブサポートしうる Colored Coin の実装」についての提案がされたことがある。実際に実装されることはなかったが、Tapyrus のトークンはこの提案を参考に作られたものだと思われる。
+https://markets.bitbank.cc/article/2hib4a8f12410
+
 ### トークン仕様
 
 Tapyrus では以下の 3 種類のトークンタイプが発行可能である。
